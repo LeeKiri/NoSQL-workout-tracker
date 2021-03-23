@@ -17,7 +17,7 @@ app.put("/api/workouts/:id", (req, res) => {
   Workout.findByIdAndUpdate(
     { _id: req.params.id },
     {
-      $push: { exercises: req.body },
+      $push: { excercises: req.body },
     }
   )
     .then((dbWorkout) => {
