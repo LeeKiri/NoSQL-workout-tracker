@@ -56,7 +56,7 @@ https://github.com/LeeKiri/NoSQL-workout-tracker
 ### URL
 
 
-### Screenshot
+### Screenshots
 The home page displays the last workout
 
 ![fit](https://user-images.githubusercontent.com/73642462/112260861-db8c1e00-8cbe-11eb-856e-3ef8a909c0ed.PNG)
