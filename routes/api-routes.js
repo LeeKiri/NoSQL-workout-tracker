@@ -3,9 +3,7 @@ const Workout = require("../models/workout.js");
 const mongoose = require("mongoose");
 
 app.get("/api/workouts", (req, res) => {
-  Workout.find({
-    
-  })
+  Workout.find({})
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
@@ -41,7 +39,17 @@ app.post("/api/workouts", (req, res) => {
 });
 
 app.get("/api/workouts/range", (req, res) => {
-  Workout.find({})
+  Workout.aggregate([
+    {
+      $addFields: {
+        totalDuration: {
+          $sum: "$exercises.duration"
+        },
+      },
+    }
+  ])
+    .sort({ _id: -1 })
+    .limit(7)
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })

@@ -7,7 +7,6 @@ const API = {
       console.log(err)
     }
     const json = await res.json();
-    console.log("this is json", json)
     return json[json.length - 1];
   },
   async addExercise(data) {
@@ -38,7 +37,6 @@ const API = {
   async getWorkoutsInRange() {
     const res = await fetch(`/api/workouts/range`);
     const json = await res.json();
-    console.log(res.json, "this is res.json");
     return json;
   },
 };
