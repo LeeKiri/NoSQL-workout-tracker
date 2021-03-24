@@ -3,7 +3,9 @@ const Workout = require("../models/workout.js");
 const mongoose = require("mongoose");
 
 app.get("/api/workouts", (req, res) => {
-  Workout.find({})
+  Workout.find({
+    
+  })
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
